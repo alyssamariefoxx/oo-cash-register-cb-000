@@ -31,6 +31,7 @@ class CashRegister
     if @discount == 0
       @total = @total - (price * quantity)
     else @total = @total - ((price * quantity) - @discount / 100)
+    end
   end
 
 end
