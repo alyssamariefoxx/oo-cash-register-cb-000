@@ -12,6 +12,7 @@ class CashRegister
 
   def add_item(title, price, quantity = 1)
     @total += price * quantity
+    @transaction += price * quantity
     quantity.times { @cart << title }
   end
 
@@ -20,6 +21,7 @@ class CashRegister
       "There is no discount to apply."
     else
       @total -= @total * @discount / 100
+      @transaction = 
       "After the discount, the total comes to $#{@total}."
     end
   end
